@@ -14,7 +14,9 @@ export const loading = {
 }
 
 export const empty = {
-  data: P.when((data: []) => data.length === 0 || data === null || data === undefined),
+  data: P.when(
+    (data: null | undefined | []) => data === null || data === undefined || data.length === 0,
+  ),
 }
 
 export const success = {
